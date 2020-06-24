@@ -63,10 +63,8 @@ $(document).ready(function () {
 
     $.ajax(places).done(function (responsePlaces) {
 
-
         console.log(JSON.stringify(responsePlaces) + "Places");
-    });
-            
+    });       
         console.log(e.lngLat)
     });
 
