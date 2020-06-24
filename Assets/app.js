@@ -1,8 +1,8 @@
 $(document).ready(function() {
     
 // Call API for trueWay directions for routing information
-var startPoint = ""
-var endPoint = ""
+var startPoint = ["44.9778","93.2650"];
+var endPoint = [];
 var directions = {
 	"async": true,
 	"crossDomain": true,
@@ -45,9 +45,14 @@ container: 'map',
 style: 'mapbox://styles/mapbox/streets-v11'
 });
 
+// Onclick event for the save button click
+$("#saveBtn").click(function() {
+    console.log("Save button clicked")
+    // after click, assign the value of the location search to a variable
+    var searchValue = $("#").val();
+});
 
 
 
-
-
+// Keep this here!
 });
