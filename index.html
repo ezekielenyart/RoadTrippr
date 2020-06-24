@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>RoadTrippr</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,7 +11,66 @@
     <link rel="stylesheet" href="/Assets/style.css">
   </head>
   <body>
-      
+      <h1>RoadTrippr</h1>
+      <!-- create first row that will contain Inputs, Buttons, Selected stops, and map -->
+      <div class="row">
+          <!-- column to hold the starting inputs and start/clear buttons -->
+        <div class="col-md-3 test">
+            <!-- Input for the starting point of the route -->
+            <input class="form-control col-md-11 m-1" type="text" placeholder="Where are we starting?">
+            <!-- input for the destination -->
+            <input class="form-control col-md-11 m-1" type="text" placeholder="Where are we going?">
+            <!-- Button to save the location inputs -->
+            <button class="btn btn-primary col-md-5 m-1" id="saveBtn" type="submit" value="Submit">Save</button>
+            <!-- Button to clear the fields for start and endpoints -->
+            <button type="button " id="clearBtn" class="btn btn-secondary col-md-5 m-1">Clear</button>
+            <hr>
+            <!-- Input box for searching stops -->
+            <input class="form-control col-md-11 m-1" type="text" placeholder="Search for a stop">
+            <!-- Button to add a stop -->
+            <button class="btn btn-primary col-md-5 m-1" id="saveBtn" type="submit" value="Submit">Add Stop</button>
+        </div>
+        <div class="col-md-3 test">
+            
+            <!-- Ordered list to hold all currently selected stops on route -->
+            <ol class="stops" id="routeList">
+                <li>Stop 1</li>
+                <li>Stop 2</li>
+                <li>Stop 3</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>  
+        </div>
+        <div class="col-md-6 test">
+            
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12">
+            <ol class="list-group list-group-horizontal" id="search-results">
+              <li class="filler">H</li>
+              <li class="filler">a</li>
+              <li class="filler">s</li>
+              <li class="filler">f</li>
+              <li class="filler">g</li>
+              <li class="filler">w</li>
+              <li class="filler">e</li>
+              <li class="filler">r</li>
+              <li class="filler">r</li>
+              <li class="filler">r</li>
+              <li class="filler">r</li>
+              <li class="filler">r</li>
+            </ol>
+          </div>
+      </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
