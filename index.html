@@ -8,17 +8,17 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Assets/style.css">
+    <link rel="stylesheet" href="./Assets/style.css">
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body>
-      <h1>RoadTrippr</h1>
+      <h1 class = "font-italic">RoadTrippr</h1>
       <!-- create first row that will contain Inputs, Buttons, Selected stops, and map -->
       <div class="row">
           <!-- column to hold the starting inputs and start/clear buttons -->
         <div class="col-md-3 test">
             <!-- Input for the starting point of the route -->
-            <input class="form-control col-md-11 m-1" type="text" placeholder="Where are we starting?">
+            <input id="startingInput" class="form-control col-md-11 m-1" type="text" placeholder="Where are we starting?">
             <!-- input for the destination -->
             <input class="form-control col-md-11 m-1" type="text" placeholder="Where are we going?">
             <!-- Button to save the location inputs -->
@@ -51,7 +51,7 @@
             </ol>  
         </div>
         <!-- Mapbox div -->
-        <div class="col-md-6 test">
+        <div id="mapDiv" class="col-md-6 test">
           <!-- Mapbox map -->
           <div id='map'></div>
         </div>
@@ -78,7 +78,7 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="/Assets/app.js"></script>
+    <script src="./Assets/app.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js'></script>
     
   </body>
