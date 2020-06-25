@@ -69,4 +69,12 @@ body {
 
 #addStopBtn {
     float: left;
+    width: 200px;
+    height: 75px;
+}
+.table {
+    display: table
+}
+.addStopButton {
+    display: table-cell
 }
