@@ -67,14 +67,25 @@ body {
 
 }
 
-#addStopBtn {
+/* #addStopBtn {
     float: left;
     width: 200px;
     height: 75px;
-}
-.table {
+} */
+/* .table {
     display: table
+} */
+.addStopBtn {
+    display: block;
+    float: left;
+    /* width: 200px; */
+    height: 75px;
 }
-.addStopButton {
-    display: table-cell
+
+.slider{
+    margin-top: 25px;
+}
+
+.itemLink{
+    float: left;
 }
