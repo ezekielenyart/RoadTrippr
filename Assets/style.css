@@ -37,6 +37,7 @@ header{
     justify-content: center;
     align-items: center;
     text-size-adjust: 15px;
+    position: relative;
 }
 #search-results {
     overflow-x: scroll;
@@ -46,6 +47,11 @@ header{
     list-style: none;
 }
 
+.icons {
+    width: 20px;
+    height: 20px;
+    display: inline-block
+}
 
 
 #map {
@@ -115,10 +121,15 @@ body {
     margin-top: 25px;
 }
 
-.itemLink{
-    float: left;
+.itemLink {
+position: absolute;
+bottom: 20px;
+left: 20px;
+font-size: larger;
+font-weight: bold;
 }
 
 .hide{
     display: none;
 }
+

@@ -1,27 +1,42 @@
 // Stand up Friday Morning
 
 // Accomplished
-// -dynamically rendered nearby items from object to button list and then to our stops added list (kinda broken still)
-// -styled buttons to fit better
-// -links under the buttons
-// -cleared previous results when you click again
-// -Add Stop list render 1 time per place click
-// -Resize the map
-// 	
+// -added start and end points
+// -added icons to header
+// -list dynamically adds one stop at a time to the list and pulls in all options within the radius
 
 // To do:
-// -Assign icons to key words
-// -dynamically render response all items to carousel instead of row
+// -give functionality to icons
+// -render items to carousel
 // -Additional styling
+// -Mobile responsive
 // -Utilize local storage to save stop list
-// -Animations?
-// -change the map api to return more types of location than just cafes
-// -expand the Lat and Long
 
+// for portfolio: 
+// -include a home/welcome page
+// -Mobile responsive
 
 // If type searched equals type present, push that object into new array
 
+var placesAll = ["amusement_park", "aquarium", "art_gallery", "atm", "bar", "beauty_salon", "book_store", "bowling", "cafe", "campground", "car_rental", "casino", "church", "cinema", "clothing_store", "convenience_store", "department_store", "electronics_store", "flowers_store", "gas_station", "gym", "hairdressing_salon", "hardware_store", "jewelry_store", "library", "liquor_store", "lodging", "mosque", "museum", "night_club", "park", "restaurant", "shopping_center", "spa", "stadium", "synagogue", "temple", "tourist_attraction", "train_station", "travel_agency", "zoo", "bus_station"]
 
+// var placesFiltered = []
+
+// var food = ["bar", "restaurant", "cafe"]
+
+// var shopping = ["shopping_center", "book-store", "clothing_store", "convenience_store", "department_store", "electronics_store", "flowers_store","hardware_store", "jewelry_store", ]
+
+// var lodging = ["lodging. campground"]
+
+// var entertainment = ["night_club", "amusement_park", "aquarium", "bowling", "casino", "cinema", "zoo"] 
+
+// var relax = ["spa", "cafe"]
+
+// var travel = ["travel_agency", "bus_station", "train_station", "tourist_attraction", "campground", "car_rental"]
+
+// var tourism = ["tourist_attraction", "campground", "art_gallery", "museum"]
+
+// var religious = ["synagogue", "temple", "mosque", "church"]
 
 $(document).ready(function () {
 
@@ -57,6 +72,14 @@ $(document).ready(function () {
     //     .setLngLat([12.550343, 55.665957])
     //     .addTo(map);
 
+    map.addControl(
+        new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+            }),
+            'top-left'
+       
+        );
+
     // Add geolocate control to the map.
     map.addControl(
         new mapboxgl.GeolocateControl({
@@ -65,6 +88,7 @@ $(document).ready(function () {
         },
         trackUserLocation: true
         })
+      
     );
 
     // Onclick event for the save button click
@@ -98,7 +122,7 @@ $(document).ready(function () {
             "async": true,
             "crossDomain": true,
             // Format of the url is [latitude, longitude]
-            "url": "https://trueway-places.p.rapidapi.com/FindPlacesNearby?type=" + stopSearch + "&radius=2000&language=en&location=" + pointSelected.lat + "%252C" + pointSelected.lng,
+            "url": "https://trueway-places.p.rapidapi.com/FindPlacesNearby?type=" + stopSearch + "&radius=5000&language=en&location=" + pointSelected.lat + "%252C" + pointSelected.lng,
             // 37.783366%252C-122.402325
             "method": "GET",
             "headers": {
@@ -118,20 +142,30 @@ $(document).ready(function () {
 
     $.ajax(places).done(function (responsePlaces) {
         $("#search-results").html("");
-        
+        var responseAll = responsePlaces[Object.keys(responsePlaces)[0]]
         // Stop option 1 info from api object to stop option cards
         // console.log(JSON.stringify(responsePlaces) + "Places");
         // console.log("Longitude and Latitude: " + e.lngLat);
         // Stop option 1 info from api object to stop option cards
          // select the name, address, and website of the  first result from the response object
         //  FOR LOOP
-         for (i=0; i < 10; i++){
+         for (i=0; i < responseAll.length;i++){
+         var type = (responsePlaces[Object.keys(responsePlaces)[0]][i].types)
+
+        // if type === anything in our array types....THEN run the rest of the code
+        console.log(type);
+
+        // if (type === "bar") {
+            
+        
+
+         
+
          var stop1NameData = (responsePlaces[Object.keys(responsePlaces)[0]][i].name)
          var stop1AddressData = (responsePlaces[Object.keys(responsePlaces)[0]][i].address)
          var stop1WebsiteData = (responsePlaces[Object.keys(responsePlaces)[0]][i].website)
         //  console.log("Name Data" + stop1NameData);
 
-       
           // add the text of the 1st result's name, address, and website to the stop option div
         //   assign Icons based on response type
         //  var stopIcons = "";
@@ -148,11 +182,11 @@ $(document).ready(function () {
         var addStopBtn = $("<button>").addClass("btn btn-success addStopBtn");
         var placeTitle = $("<h4>").text(stop1NameData).addClass("col-12");
         var placeAddress = $("<p>").text(stop1AddressData).addClass("col-12");
-        var placeLink = $("<a>").text("More Information").attr("id", "placeLink");
-        placeLink.addClass("itemLink text-center")
+        var placeLink = $("<a>").text("More Information").addClass("itemLink text-center");
         placeLink.attr({"target": "_blank", "href": stop1WebsiteData});
         addStopBtn.append(placeTitle, placeAddress);  
         nearbyPlaceLi.append(addStopBtn, placeLink);
+
         
 
         // TESTING
@@ -169,10 +203,10 @@ $(document).ready(function () {
 
         // Add Stop function for buttons on stop options
         // when user clicks the Add Stop button...
-       
-
+        // } 
 
     }
+    
     
 
     $(".addStopBtn").click(function(){
@@ -197,7 +231,7 @@ $(document).ready(function () {
             // set a variable for the id stoplist, the ordered list of saved stops
             // $("#stopList").empty();
                 var stopList = $("#stopList");
-            for (i = 0; i <= stopArray.length; i++){
+            for (i = 0; i < stopArray.length; i++){
                 var newStop = $("<li>").text(stopArray[i]);
                 stopList.append(newStop)
             }
@@ -218,7 +252,7 @@ $(document).ready(function () {
 
 
 
-        console.log("stop1 name for list: " + stopOpt1Name)
+        // console.log("stop1 name for list: " + stopOpt1Name)
 
 
         })

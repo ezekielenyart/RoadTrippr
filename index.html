@@ -12,6 +12,8 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="./Assets/style.css">
   <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css" type="text/css"
+/>
 </head>
 
 <body>
@@ -21,6 +23,16 @@
     </div>
     <div>
       <h1 class="font-italic">RoadTrippr</h1>      
+    </div>
+    <div class="iconList">
+      <img src="./Assets/restaurant.jpg" alt="FOOD" class="inline-block restaurant icons">
+      <img src="./Assets/shopping.jpg" alt="SHOP" class="inline_block shopping icons">
+      <img src="./Assets/casino.png" alt="ENTERTAINMENT" class="inline-block entertainment icons">
+      <img src="./Assets/camping.jpg" alt="LODGE" class="icons lodging inline-block">
+      <img src="./Assets/tourism.jpg" alt="TOURISM" class="icons inline-block tourism">
+      <img src="./Assets/travel.png" alt="TRAVEL" class= "inline-block icons travel"> 
+      <img src="./Assets/religion.jpg" alt="RELIGIOUS" class= "religious inline-block icons">
+      <img src="./Assets/Cafe.png" alt="RELAX" class="relax inline-block icons">
     </div>
   </header>
   <!-- create first row that will contain Inputs, Buttons, Selected stops, and map -->
@@ -44,10 +56,7 @@
     <div class="col-md-3 test"> 
 
       <!-- Ordered list to hold all currently selected stops on route -->
-      <ol class="stops" id="stopList">
-        <li>Test Text</li>
-       
-            
+      <ol class="stops" id="stopList">       
       </ol>
     </div>
 
@@ -157,6 +166,8 @@
     crossorigin="anonymous"></script>
   <script src="./Assets/app.js"></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js'></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js"></script>
+
 
 </body>
 
