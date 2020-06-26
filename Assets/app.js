@@ -2,16 +2,19 @@
 
 // Accomplished
 // -added start and end points
+// -added icons to header
+// -list dynamically adds one stop at a time to the list and pulls in all options within the radius
 
 // To do:
-// -Assign icons to key words
-// -dynamically render response all items to carousel instead of row
+// -give functionality to icons
+// -render items to carousel
 // -Additional styling
+// -Mobile responsive
 // -Utilize local storage to save stop list
-// -Animations?
-// -change the map api to return more types of location than just cafes
-// -expand the Lat and Long
 
+// for portfolio: 
+// -include a home/welcome page
+// -Mobile responsive
 
 // If type searched equals type present, push that object into new array
 
@@ -114,7 +117,7 @@ $(document).ready(function () {
             
             
             // Api call for nearby places.
-            var stopSearch = "";
+            var stopSearch = "bar";
             var places = {
             "async": true,
             "crossDomain": true,
@@ -147,11 +150,11 @@ $(document).ready(function () {
          // select the name, address, and website of the  first result from the response object
         //  FOR LOOP
          for (i=0; i < responseAll.length;i++){
-         var type = (responsePlaces[Object.keys(responsePlaces)[0]][i].type)
+         var type = (responsePlaces[Object.keys(responsePlaces)[0]][i].types)
 
         // if type === anything in our array types....THEN run the rest of the code
+        console.log(type);
 
-        // if (placesAll.includes(type)) {
         // if (type === "bar") {
             
         
@@ -163,7 +166,6 @@ $(document).ready(function () {
          var stop1WebsiteData = (responsePlaces[Object.keys(responsePlaces)[0]][i].website)
         //  console.log("Name Data" + stop1NameData);
 
-       
           // add the text of the 1st result's name, address, and website to the stop option div
         //   assign Icons based on response type
         //  var stopIcons = "";
@@ -201,7 +203,7 @@ $(document).ready(function () {
 
         // Add Stop function for buttons on stop options
         // when user clicks the Add Stop button...
-       
+        // } 
 
     }
     
