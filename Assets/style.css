@@ -50,7 +50,7 @@ header{
 .icons {
     width: 20px;
     height: 20px;
-    display: inline-block
+    display: inline-block;
 }
 
 
@@ -133,3 +133,6 @@ font-weight: bold;
     display: none;
 }
 
+.selected {
+    border: 2px solid red;
+}
