@@ -15,11 +15,18 @@
 </head>
 
 <body>
-  <h1 class="font-italic">RoadTrippr</h1>
+  <header>
+    <div class="logo">
+      <img class="logoImg" src="./Assets/Logo.png" alt="RoadTrippr Logo">
+    </div>
+    <div>
+      <h1 class="font-italic">RoadTrippr</h1>      
+    </div>
+  </header>
   <!-- create first row that will contain Inputs, Buttons, Selected stops, and map -->
-  <div class="row">
+  <div class="row mapListRow">
     <!-- column to hold the starting inputs and start/clear buttons -->
-    <div class="col-md-3 test">
+    <div class="col-md-3 test hide">
       <!-- Input for the starting point of the route -->
       <input id="startingInput" class="form-control col-md-11 m-1" type="text" placeholder="Where are we starting?">
       <!-- input for the destination -->
@@ -34,21 +41,22 @@
       <!-- Button to add a stop -->
       <button class="btn btn-primary col-md-5 m-1" id="addStop" type="submit" value="Submit">Search</button>
     </div>
-    <div class="col-md-3 test">
+    <div class="col-md-3 test"> 
 
       <!-- Ordered list to hold all currently selected stops on route -->
       <ol class="stops" id="stopList">
         <li>Test Text</li>
-        <li></li>
-        <li></li>
+       
             
       </ol>
     </div>
+
     <!-- Mapbox div -->
-    <div id="mapDiv" class="col-md-6 test">
+    <div id="mapDiv" class="col-md-9 test">
       <!-- Mapbox map -->
       <div id='map'></div>
     </div>
+
   </div>
   <div class="row">
     <div class="col-md-12 ">
