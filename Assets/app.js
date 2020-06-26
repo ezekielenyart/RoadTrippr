@@ -92,6 +92,7 @@ $(document).ready(function () {
 
 
     $.ajax(places).done(function (responsePlaces) {
+        $("#search-results").html("");
         // Stop option 1 info from api object to stop option cards
         // console.log(JSON.stringify(responsePlaces) + "Places");
         // console.log("Longitude and Latitude: " + e.lngLat);
@@ -129,7 +130,7 @@ $(document).ready(function () {
          $("#stopOption1Address").text(stop1AddressData)
          $("#stopOption1Website").text(stop1WebsiteData)
         //  nearbyPlaceLi.append(placeTitle, placeAddress, placeLink, addStopBtn)
-         $(".filler-list").append(nearbyPlaceLi)
+         $("#search-results").append(nearbyPlaceLi)
         // console.log(JSON.stringify(responsePlaces) + "Places");
         // console.log(e.lngLat)
 
