@@ -1,3 +1,28 @@
+// Stand up Friday Morning
+
+// Accomplished
+// -dynamically rendered nearby items from object to button list and then to our stops added list (kinda broken still)
+// -styled buttons to fit better
+// -links under the buttons
+// -cleared previous results when you click again
+// -Add Stop list render 1 time per place click
+// -Resize the map
+// 	
+
+// To do:
+// -Assign icons to key words
+// -dynamically render response all items to carousel instead of row
+// -Additional styling
+// -Utilize local storage to save stop list
+// -Animations?
+// -change the map api to return more types of location than just cafes
+// -expand the Lat and Long
+
+
+// If type searched equals type present, push that object into new array
+
+
+
 $(document).ready(function () {
 
     // Call API for trueWay directions for routing information
@@ -24,7 +49,7 @@ $(document).ready(function () {
     var map = new mapboxgl.Map({
         container: 'map',
         center: [-98.5795, 39.8283],
-        zoom: 2.75,
+        zoom: 3,
         style: 'mapbox://styles/mapbox/streets-v11'
     });
     // This is supposed to be putting markers on the map, but I couldn't figure out how to get it to work
@@ -68,7 +93,7 @@ $(document).ready(function () {
             
             
             // Api call for nearby places.
-            var stopSearch = "cafe";
+            var stopSearch = "bar";
             var places = {
             "async": true,
             "crossDomain": true,
@@ -93,11 +118,13 @@ $(document).ready(function () {
 
     $.ajax(places).done(function (responsePlaces) {
         $("#search-results").html("");
+        
         // Stop option 1 info from api object to stop option cards
         // console.log(JSON.stringify(responsePlaces) + "Places");
         // console.log("Longitude and Latitude: " + e.lngLat);
         // Stop option 1 info from api object to stop option cards
          // select the name, address, and website of the  first result from the response object
+        //  FOR LOOP
          for (i=0; i < 10; i++){
          var stop1NameData = (responsePlaces[Object.keys(responsePlaces)[0]][i].name)
          var stop1AddressData = (responsePlaces[Object.keys(responsePlaces)[0]][i].address)
@@ -109,6 +136,10 @@ $(document).ready(function () {
         //   assign Icons based on response type
         //  var stopIcons = "";
 
+
+            
+            
+
         // TESTING 
 
         // 
@@ -117,8 +148,8 @@ $(document).ready(function () {
         var addStopBtn = $("<button>").addClass("btn btn-success addStopBtn");
         var placeTitle = $("<h4>").text(stop1NameData).addClass("col-12");
         var placeAddress = $("<p>").text(stop1AddressData).addClass("col-12");
-        var placeLink = $("<a>").text("More Information");
-        placeLink.addClass("itemLink")
+        var placeLink = $("<a>").text("More Information").attr("id", "placeLink");
+        placeLink.addClass("itemLink text-center")
         placeLink.attr({"target": "_blank", "href": stop1WebsiteData});
         addStopBtn.append(placeTitle, placeAddress);  
         nearbyPlaceLi.append(addStopBtn, placeLink);
@@ -126,46 +157,76 @@ $(document).ready(function () {
 
         // TESTING
 
-         $("#stopOption1Name").text(stop1NameData)
-         $("#stopOption1Address").text(stop1AddressData)
-         $("#stopOption1Website").text(stop1WebsiteData)
+        //  $("#stopOption1Name").text(stop1NameData)
+        //  $("#stopOption1Address").text(stop1AddressData)
+        //  $("#stopOption1Website").text(stop1WebsiteData)
         //  nearbyPlaceLi.append(placeTitle, placeAddress, placeLink, addStopBtn)
          $("#search-results").append(nearbyPlaceLi)
         // console.log(JSON.stringify(responsePlaces) + "Places");
         // console.log(e.lngLat)
+        
+        
 
-        }
+        // Add Stop function for buttons on stop options
+        // when user clicks the Add Stop button...
+       
+
+
+    }
     
+
+    $(".addStopBtn").click(function(){
+
+
+        var stopArray = [];
+        
+
+        // create a list item with the location details inside of the ol in the stop list div
+        
+        // select text from the stop option div h1
+        var stopOpt1Name = this.textContent
+        // var stopOpt1Name = $("#stopOption1Name").text();
+
+        // console.log(this.textContent)
+
+        // add stop
+        stopArray.push(stopOpt1Name)
+        // console.log("stop array: " + stopArray)
+
+
+            // set a variable for the id stoplist, the ordered list of saved stops
+            // $("#stopList").empty();
+                var stopList = $("#stopList");
+            for (i = 0; i <= stopArray.length; i++){
+                var newStop = $("<li>").text(stopArray[i]);
+                stopList.append(newStop)
+            }
+    
+            // console.log("this object: " + this)
+        
+        // console.log("add button clicked");
+        console.log(stopArray);
+
+
+        
+        
+    });
+
+
+  
+
+
+
+
+        console.log("stop1 name for list: " + stopOpt1Name)
+
+
         })
 
     });       
         
     
-    var stopArray = [];
-
-    // Add Stop function for buttons on stop options
-    // when user clicks the Add Stop button...
-    $(".addStopBtn").click(function(){
-        // create a list item with the location details inside of the ol in the stop list div
-        console.log("add button clicked")
-        // select text from the stop option div h1
-        var stopOpt1Name = $("#stopOption1Name").text();
-        console.log("stop1 name for list: " + stopOpt1Name)
-        // add stop
-        stopArray.push("StopOpt1Name");
-        console.log("stop array: " + stopArray)
-
-
-            // set a variable for the id stoplist, the ordered list of saved stops
-            $("#stopList").empty();
-            var stopList = $("#stopList");
-            for (i = 0; i <= stopArray.length; i++){
-                var newStop = $("<li>").text(this.textContent);
-                stopList.append(newStop)
-            }
     
-            console.log("this object: " + this)
-    });
 
     // $("#addStopBtn").click(function(){
     //     console.log(this);
@@ -195,5 +256,12 @@ $(document).ready(function () {
 
 
 
-    // Keep this here!
-});
+//   
+
+
+
+
+
+//  |  Keep this here!
+//  V
+    });

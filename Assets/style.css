@@ -8,6 +8,19 @@
     
 }
 
+.logo{
+    float: left;
+    margin-right: 5px;
+}
+
+header{
+    padding: 10px;
+}   
+
+.logoImg{
+    width: 50px;
+}
+
 .stops {
     overflow-y: scroll;
     height: 200px;
@@ -15,20 +28,25 @@
 
 .filler{
     background-color: #c3deff;
-    width: 500px;
+    /* width: 500px; */
     margin: 5px;
     border: black;
     border-width: 1px;
     border-style: solid;
     border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    text-size-adjust: 15px;
 }
 #search-results {
     overflow-x: scroll;
     white-space: nowrap;
     width: 100%;
-    height: 150px;
+    height: 200px;
     list-style: none;
 }
+
+
 
 #map {
     position: absolute;
@@ -42,6 +60,15 @@
     position: relative;
     padding: 0px;
 }
+
+.test {
+    height: 500px;
+}
+
+#stopList {
+    height: 500px;
+}
+
 
 body {
     background-image: url("./grunge.jpg")
@@ -63,7 +90,7 @@ body {
 #stopOption1Website {
     font-size: 10px;
     padding: 0;
-    margin: 0;
+    margin: center;
 
 }
 
@@ -80,6 +107,8 @@ body {
     float: left;
     /* width: 200px; */
     height: 75px;
+    word-wrap: break-word;
+    text-overflow: clip;
 }
 
 .slider{
@@ -88,4 +117,8 @@ body {
 
 .itemLink{
     float: left;
+}
+
+.hide{
+    display: none;
 }
