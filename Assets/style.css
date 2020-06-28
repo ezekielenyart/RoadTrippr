@@ -53,6 +53,8 @@ header{
     align-items: center;
     text-size-adjust: 15px;
     position: relative;
+    height: 125px;
+
 }
 #search-results {
     overflow-x: scroll;
@@ -80,6 +82,14 @@ header{
     margin: auto;
 }
 
+
+
+#app-description {
+    font-weight: 500;
+    text-align: center;
+    justify-content: center;
+}
+
 .div-collapse {
     background: rgba(202, 245, 255, 50%)
 }
@@ -90,13 +100,39 @@ header{
     opacity: 100%;
 }
 
+/* .options-row {
+    height: 25px;
+    
+} */
+
 @media screen and (max-width: 767px) {
     .stops {
         height: 100px;
     }
+    #app-description{
+        font-weight: 600;
+        font-size: 36px;  
+    }
+    .jumbotron h1 {
+        font-size: 40px;
+    }
+    .options-row {
+        position: fixed;
+        bottom: -60px;
+    }
   }
 
+
+
+/* .directions-control-instructions:hover, .mapbox-directions-component:hover, .mapbox-directions-instructions:hover, .mapboxgl-interactive:hover{
+    display: none;
+} */
+
 @media screen and (max-width: 640px) {
+    #app-description{
+        font-weight: 500;
+        font-size: 30px;
+    }
     .stops {
         height: 100px;
     }
@@ -104,12 +140,10 @@ header{
         height: 34px;
         width: 34px;
         margin: auto;
-
     }
     .logo-text {
         font-size: 32px;
         margin: auto;
-
     }
     #smallLogo {
         width: 100%;
@@ -121,9 +155,7 @@ header{
     #icons {
         margin: auto;
     }
-
 }
-
 
 
 #map {
@@ -155,6 +187,8 @@ body {
     padding: 0;
     margin: 0;
 }
+
+
 
 #stopOption1Address {
     font-size: 10px;
@@ -227,6 +261,7 @@ font-weight: bold;
 }
 
 #splashJumbotron {
+    /* background: rgba(202, 245, 255, 75%) */
     background-color: #CAF5FF;
     padding: 10px;
     border-radius: 20px;

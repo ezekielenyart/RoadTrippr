@@ -126,16 +126,21 @@ $(document).ready(function () {
         container: 'map',
         center: [-98.5795, 39.8283],
         zoom: 3,
+        attributionControl: false,
         style: 'mapbox://styles/mapbox/streets-v11'
+
     });
     // This is supposed to be putting markers on the map, but I couldn't figure out how to get it to work
     // var marker = new mapboxgl.Marker()
     //     .setLngLat([12.550343, 55.665957])
     //     .addTo(map);
 
+    map.addControl(new mapboxgl.AttributionControl(), 'top-left');
+
     map.addControl(
         new MapboxDirections({
-            accessToken: mapboxgl.accessToken
+            accessToken: mapboxgl.accessToken,
+            controls: {instructions: false}
         }),
         'top-left'
 
@@ -248,7 +253,7 @@ $(document).ready(function () {
                 var addStopBtn = $("<button>").addClass("btn btn-success addStopBtn");
                 var placeTitle = $("<h4>").text(stop1NameData).addClass("col-12");
                 var placeAddress = $("<p>").text(stop1AddressData).addClass("col-12");
-                var placeLink = $("<a>").text("More Information").addClass("itemLink text-center");
+                var placeLink = $("<a>").text("More Information").addClass("itemLink");
                 placeLink.attr({ "target": "_blank", "href": stop1WebsiteData });
                 addStopBtn.append(placeTitle, placeAddress);
                 nearbyPlaceLi.append(addStopBtn, placeLink);
