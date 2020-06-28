@@ -3,8 +3,9 @@
     width: 100%;
     border: black;
     border-width: 1px;
-    border-style: dashed;
-    height: 250px;
+    border-style: inset;
+    border-radius: 20;
+    height:500px;
     
 }
 
@@ -15,17 +16,30 @@
 
 header{
     padding: 10px;
+
 }   
+
+.header-link{
+    color: black;
+}
+
+.header-link:hover{
+    color: black;
+    text-decoration: unset;
+}
 
 .logoImg{
     width: 50px;
     
+    
 }
 
-.stops {
-    overflow-y: scroll;
-    height: 200px;
+.list-title{
+    text-align: center;
+    opacity: 100%;
 }
+
+
 
 .filler{
     background-color: #c3deff;
@@ -49,18 +63,67 @@ header{
 }
 #icons {
     margin: 10px;
-   
-
 }
 /* .selection{
     float: right
 } */
 .icons {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     display: inline-block;
     margin-left: 5px
+    border: 2px;
+    border-radius: 5px;
 }
+
+.iconList {
+    margin: auto;
+}
+
+.div-collapse {
+    background: rgba(202, 245, 255, 50%)
+}
+
+.stops {
+    overflow-y: scroll;
+    height: 500px;
+    opacity: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .stops {
+        height: 100px;
+    }
+  }
+
+@media screen and (max-width: 640px) {
+    .stops {
+        height: 100px;
+    }
+    .logoImg {
+        height: 34px;
+        width: 34px;
+        margin: auto;
+
+    }
+    .logo-text {
+        font-size: 32px;
+        margin: auto;
+
+    }
+    #smallLogo {
+        width: 100%;
+        justify-content: center;
+    }
+    .icons {
+        display: none;
+    }
+    #icons {
+        margin: auto;
+    }
+
+}
+
 
 
 #map {
@@ -76,10 +139,7 @@ header{
     padding: 0px;
 }
 
-.test {
-    height: 500px;
-}
-
+/* Confirmed stop list styling */
 #stopList {
     height: 500px;
 }
@@ -144,4 +204,30 @@ font-weight: bold;
 
 .selected {
     border: 2px solid red;
+}
+
+/* Slash page styles */
+
+.jumbotron {
+    
+    align-items: center;
+    /* height: 1000px; */
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-image: url(https://www.snopes.com/tachyon/2019/12/GettyImages-1051282212-e1577815488320.jpg?resize=1200,630&quality=65);
+    border-radius: .3rem;
+}
+
+.startButton {
+    max-width: 400px;
+    padding: 30px;
+    margin: auto;
+    font-size: x-large;
+}
+
+#splashJumbotron {
+    background-color: #CAF5FF;
+    padding: 10px;
+    border-radius: 20px;
+    opacity: 85%;
 }
