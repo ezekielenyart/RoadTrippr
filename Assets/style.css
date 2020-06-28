@@ -146,7 +146,8 @@ header{
 
 
 body {
-    background-image: url("./grunge.jpg")
+    background-image: url("./grunge.jpg");
+    overflow: hidden;
 }
 
 #stopOption1Name {
