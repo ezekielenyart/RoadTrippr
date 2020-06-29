@@ -4,7 +4,7 @@ Contributors
 Andrew Smith - https://github.com/AndrewCodesDontYaKnow
 Emilee Reiter - https://github.com/emileereiter
 Nathan Szurek - https://github.com/NathanSzu/
-Zeke Enyart - 
+Zeke Enyart - https://github.com/ezekielenyart
 
 Application hosted at https://nathanszu.github.io/RoadTrippr/
 
