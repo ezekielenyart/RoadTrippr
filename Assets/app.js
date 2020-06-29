@@ -21,26 +21,6 @@
 var placesAll = ["amusement_park", "aquarium", "art_gallery", "atm", "bar", "beauty_salon", "book_store", "bowling", "cafe", "campground", "car_rental", "casino", "church", "cinema", "clothing_store", "convenience_store", "department_store", "electronics_store", "flowers_store", "gas_station", "gym", "hairdressing_salon", "hardware_store", "jewelry_store", "library", "liquor_store", "lodging", "mosque", "museum", "night_club", "park", "restaurant", "shopping_center", "spa", "stadium", "synagogue", "temple", "tourist_attraction", "train_station", "travel_agency", "zoo", "bus_station"]
 var type = "cafe";
 
-
-
-// var placesFiltered = []
-
-// var food = ["bar", "restaurant", "cafe"]
-
-// var shopping = ["shopping_center", "book-store", "clothing_store", "convenience_store", "department_store", "electronics_store", "flowers_store","hardware_store", "jewelry_store", ]
-
-// var lodging = ["lodging. campground"]
-
-// var entertainment = ["night_club", "amusement_park", "aquarium", "bowling", "casino", "cinema", "zoo"] 
-
-// var relax = ["spa", "cafe"]
-
-// var travel = ["travel_agency", "bus_station", "train_station", "tourist_attraction", "campground", "car_rental"]
-
-// var tourism = ["tourist_attraction", "campground", "art_gallery", "museum"]
-
-// var religious = ["synagogue", "temple", "mosque", "church"]
-
 $(document).ready(function () {
 
     placesAll.forEach(function (place) {
@@ -57,17 +37,6 @@ $(document).ready(function () {
             newWord.push(letters)
         }
         option.text(newWord.join(" "))
-
-        // var text = place
-        //     .split("_")
-        //     .map(w =>
-        //         w.split("")
-        //             .map((l, i) => !i ? l.toUpperCase() : l)
-        //             .join(""))
-        //     .join(" ")
-
-
-        // option.text(text)
 
         $("#icons").append(option)
     })
@@ -100,25 +69,6 @@ $(document).ready(function () {
         $("#icons").val(type)
         console.log(type)
     })
-
-    // Call API for trueWay directions for routing information
-    // var startPoint = ["44.9778","93.2650"];
-    // var endPoint = ["44.8041","93.1669"];
-    // var directions = {
-    // 	"async": true,
-    // 	"crossDomain": true,
-    // 	"url": "https://trueway-directions2.p.rapidapi.com/FindDrivingPath?origin=" + startPoint[0] + "%252C" + startPoint[1] + "&destination=" + endPoint[0] + "%252C" + endPoint[1],
-    // 	"method": "GET",
-    // 	"headers": {
-    // 		"x-rapidapi-host": "trueway-directions2.p.rapidapi.com",
-    // 		"x-rapidapi-key": "d5ede8fb76msh257bfd78eae8972p1c7e40jsn9f3602b7f9eb"
-    // 	}
-    // }
-
-    // $.ajax(directions).done(function (dirResp) {
-    // 	console.log(JSON.stringify(dirResp) + "Directions");
-    // });
-
 
     // MAPBOX
     mapboxgl.accessToken = 'pk.eyJ1IjoibmF0aGFuc3p1IiwiYSI6ImNrYnM5dXRvbTAxZ2UyeG1uemozNjdteGoifQ.umqce5kG624MLhs1ywGAng';
@@ -330,43 +280,4 @@ $(document).ready(function () {
 
     });
 
-
-
-
-    // $("#addStopBtn").click(function(){
-    //     console.log(this);
-    //     console.log(this.textContent);
-    // });
-
-
-
-
-
-
-
-    // var placeSearch = {
-    // 	"async": true,
-    // 	"crossDomain": true,
-    // 	"url": "https://trueway-places.p.rapidapi.com/FindPlaceByText?language=en&text=Children's%20Creativity%20Museum",
-    // 	"method": "GET",
-    // 	"headers": {
-    // 		"x-rapidapi-host": "trueway-places.p.rapidapi.com",
-    // 		"x-rapidapi-key": "d5ede8fb76msh257bfd78eae8972p1c7e40jsn9f3602b7f9eb"
-    // 	}
-    // }
-
-    // $.ajax(placeSearch).done(function (responsePlace) {
-    // 	console.log(responsePlace);
-    // });
-
-
-
-    //   
-
-
-
-
-
-    //  |  Keep this here!
-    //  V
 });

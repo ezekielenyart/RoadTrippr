@@ -54,6 +54,7 @@ header{
     text-size-adjust: 15px;
     position: relative;
     height: 125px;
+    display: inline-block;
 
 }
 #search-results {
@@ -100,10 +101,9 @@ header{
     opacity: 100%;
 }
 
-/* .options-row {
-    height: 25px;
-    
-} */
+.options-row{
+    -webkit-overflow-scrolling: touch;
+}
 
 @media screen and (max-width: 767px) {
     .stops {
@@ -251,6 +251,9 @@ font-weight: bold;
     margin-bottom: 2rem;
     background-image: url(https://www.snopes.com/tachyon/2019/12/GettyImages-1051282212-e1577815488320.jpg?resize=1200,630&quality=65);
     border-radius: .3rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
 }
 
 .startButton {
