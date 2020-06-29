@@ -74,7 +74,7 @@ header{
     width: 30px;
     height: 30px;
     display: inline-block;
-    margin-left: 5px
+    margin-left: 5px;
     border: 2px;
     border-radius: 5px;
 }
@@ -246,7 +246,6 @@ font-weight: bold;
 .jumbotron {
     
     align-items: center;
-    /* height: 1000px; */
     padding: 2rem 1rem;
     margin-bottom: 2rem;
     background-image: url(https://www.snopes.com/tachyon/2019/12/GettyImages-1051282212-e1577815488320.jpg?resize=1200,630&quality=65);
@@ -266,7 +265,9 @@ font-weight: bold;
 #splashJumbotron {
     /* background: rgba(202, 245, 255, 75%) */
     background-color: #CAF5FF;
-    padding: 10px;
+    padding: 25px;
     border-radius: 20px;
     opacity: 85%;
+    max-width: 900px;
+    margin: auto;
 }
