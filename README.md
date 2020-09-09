@@ -1,5 +1,9 @@
 
-  # RoadTrippr
+Contributors
+Andrew Smith - https://github.com/AndrewCodesDontYaKnow
+Emilee Reiter - https://github.com/emileereiter
+Nathan Szurek - https://github.com/NathanSzu/
+Zeke Enyart - https://github.com/ezekielenyart
 
   ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
   ## Table of Contents
