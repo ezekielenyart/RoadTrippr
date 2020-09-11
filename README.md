@@ -3,7 +3,7 @@ Contributors
 Andrew Smith - https://github.com/AndrewCodesDontYaKnow
 Emilee Reiter - https://github.com/emileereiter
 Nathan Szurek - https://github.com/NathanSzu/
-Zeke Enyart - https://github.com/ezekielenyart
+Zeke Everest - https://github.com/ezekieleverest
 
   ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
   ## Table of Contents
@@ -37,3 +37,4 @@ Zeke Enyart - https://github.com/ezekielenyart
   ezekieleverest 
  
   zekejeverest@gmail.com
+<img src="https://raw.githubusercontent.com/NathanSzu/RoadTrippr/master/Assets/roadTripprSS.png">
